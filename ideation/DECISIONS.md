@@ -31,6 +31,11 @@
 | D27 | Bộ pilot 0.1.3: cho phép bỏ tham số temperature và seed (model mới từ chối temperature); ghi token vào nhật ký | Lỗi 400 khi gọi `claude-haiku-5-5` | Coordinator |
 | D28 | M1R: kế hoạch và cách đọc cho lượt chạy model thật được viết trước khi chạy; kết quả: C1 đứng vững trên Graphiti (12/13 ở cả hai model); phân loại chi tiết thêm sau được ghi là mô tả | `round2/checks/m1_real_model_PLAN.md`, `m1_real_model_RESULT.md` | Coordinator (theo bằng chứng) |
 | D29 | Sai sót của coordinator: một lượt chạy bị mất kết quả do lỗi harness, lãng phí 221.206 token vào và 10.939 token ra | Ghi ở mục Deviations của kế hoạch | Coordinator |
+| D30 | Tác giả cho phép thử model mới hơn và mạnh hơn; đồng ý đổi trọng tâm Proposal 1 sang tên riêng nếu hợp venue; muốn giữ hướng security (chuyên môn của tác giả) | Lời tác giả 2026-11-20, 21:46 | Tác giả |
+| D31 | Bộ pilot 0.1.4: bảng chấm dạng Excel có hướng dẫn, ví dụ, danh sách chọn; sửa lỗi ô bắt đầu bằng "-" bị đọc thành công thức | Tác giả báo lỗi `#NAME?` khi mở file CSV | Coordinator |
+| D32 | S1 (quyền theo người trong bộ nhớ dùng chung): kế hoạch viết trước; kết quả 4/4 cặp trùng khoá, 2/2 control; hai lượt săn tiền lệ: incremental, mô hình đe doạ còn là giả định với sản phẩm hiện nay | `round2/checks/s1_shared_graph_*`, `round2/05_NOVELTY/IDEA_S1_priorart_*` | Coordinator (theo bằng chứng) |
+| D33 | Sửa phân loại ở lượt chạy model mạnh (node dẫn xuất bị đếm nhầm là người); ghi rõ là hậu kiểm. Với sonnet/opus, việc dữ kiện bị gắn nhầm chỉ thấy ở 3/12 và 4/13 | `round2/checks/m1_real_model_RESULT.md` | Coordinator |
+| D34 | Một bài hay hai bài; venue security hay NLP — sau thí nghiệm trên hệ thống thật / agent dùng công cụ thật | `round2/07_SELECTION_R2.md` mục 8 | **Chờ tác giả** |
 
 ## Sai lệch so với quy trình chuẩn (ghi để minh bạch)
 - **Review khác họ model đã có (GPT-6, 2026-11-20)** cho novelty và phản biện của cả hai proposal; các bản đặc tả gửi đi đã lược mục 13 và các câu dự đoán để reviewer tự đánh giá. Các sửa đổi sau review (D18, D19) **chưa** được review lại.
