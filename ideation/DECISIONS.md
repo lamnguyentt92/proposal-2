@@ -47,6 +47,10 @@
 | D43 | C1 có bằng chứng theo tần suất tên thật (12,07% so với 0,10%, mức hàm); nguồn: github.com/duyet/vietnamese-namedb (MIT) và bảng tần suất tên Mỹ của FiveThirtyEight; chỉ lưu số liệu tổng hợp | `round2/checks/c1_population_collision_RESULT.md` | Coordinator (theo bằng chứng) |
 | D44 | Rút lại phát biểu "bản sửa đang chờ làm lỗi nặng thêm": sai với tên thật (12,07% → 7,05%); nguyên nhân: danh sách tên tự viết của coordinator không đại diện | Như trên | Coordinator |
 | D45 | S5: bỏ vế "tiếng Việt nhiều hơn tiếng Anh" của C3 (0/10 và 0/10 ở cả hai model); đặc tả lên bản 2.1 | `round2/checks/s5_reference_language_PLAN.md`, `_RESULT.md` | Coordinator (theo bằng chứng) |
+| D46 | Đồng ý kế hoạch (pipeline với tên theo tần suất + framework thứ hai; kiểm tra tiền lệ cho lỗi đại từ); cho phép dùng model mới hơn, cao hơn của cả GPT và Claude để tăng đa dạng | Lời tác giả 2026-11-20, 23:12 | Tác giả |
+| D47 | S6: gộp ở mức hàm đi suốt pipeline của Graphiti với 4 model hợp lệ (9–10/10); Mem0 không lặp lại hiện tượng gộp mà cắt mảnh tên Việt (66,8% so với 96,8–100% nhận trọn tên) → viết lại C1 theo từng framework; đặc tả bản 2.2 | `round2/checks/s6_name_pipeline_RESULT.md`, `c1b_mem0_name_capture_RESULT.md` | Coordinator (theo bằng chứng) |
+| D48 | Rút C3 khỏi phần đóng góp: lỗi đại từ trong Graphiti đã là bug được báo cáo (issue #1171, PR #1807) và SocialMemBench (arXiv:2605.17789) đã báo cáo hiện tượng tương tự | `round2/05_NOVELTY/FINDING_pronoun_wrong_person_priorart.md`; issue #1171 đã được coordinator mở kiểm | Coordinator (theo bằng chứng) |
+| D49 | Dùng tên ghép theo tần suất (họ của một bản ghi + đệm và tên của bản ghi khác) cho các kịch bản; không đưa họ tên của cá nhân có thật kèm dữ kiện hư cấu vào repo | Bảo vệ người có tên trong danh sách công khai | Coordinator |
 
 ## Sai lệch so với quy trình chuẩn (ghi để minh bạch)
 - **Review khác họ model đã có (GPT-6, 2026-11-20)** cho novelty và phản biện của cả hai proposal; các bản đặc tả gửi đi đã lược mục 13 và các câu dự đoán để reviewer tự đánh giá. Các sửa đổi sau review (D18, D19) **chưa** được review lại.
