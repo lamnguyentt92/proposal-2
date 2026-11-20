@@ -43,6 +43,10 @@
 | D39 | Chốt venue ACL/EMNLP cho bài duy nhất; hệ quả về quyền xem/xoá là một mục của bài; đi tiếp dù gate novelty ở trạng thái WARN | Lời tác giả 2026-11-20, 22:41: "OK chốt" | Tác giả |
 | D40 | Viết lại đặc tả Proposal 1 (bản 2: định danh người khi agent ghi bộ nhớ tiếng Việt — tên riêng + quy chiếu ngôi thứ ba); bản 1 (từ thân tộc) thành một nghiên cứu con (C4) | Bằng chứng của vòng 2 và các lượt S1–S4 | Coordinator, theo quyết định D39 |
 | D41 | S4: quan sát "trùng tên làm dữ kiện đại từ bị ghi cho A" không được xác nhận (3/8 so với 2/8); quan sát mới về đại từ (0/12 tiếng Việt lưu đúng) được ghi là hậu kiểm | `round2/checks/s4_pronoun_misattribution_PLAN.md`, `_RESULT.md` | Coordinator (theo bằng chứng) |
+| D42 | Dùng key của nhà cung cấp thứ hai; ưu tiên model cũ và rẻ (gpt-4o-mini), model đắt chỉ khi cần; key lưu ngoài repo | Lời tác giả 2026-11-20, 22:55 | Tác giả |
+| D43 | C1 có bằng chứng theo tần suất tên thật (12,07% so với 0,10%, mức hàm); nguồn: github.com/duyet/vietnamese-namedb (MIT) và bảng tần suất tên Mỹ của FiveThirtyEight; chỉ lưu số liệu tổng hợp | `round2/checks/c1_population_collision_RESULT.md` | Coordinator (theo bằng chứng) |
+| D44 | Rút lại phát biểu "bản sửa đang chờ làm lỗi nặng thêm": sai với tên thật (12,07% → 7,05%); nguyên nhân: danh sách tên tự viết của coordinator không đại diện | Như trên | Coordinator |
+| D45 | S5: bỏ vế "tiếng Việt nhiều hơn tiếng Anh" của C3 (0/10 và 0/10 ở cả hai model); đặc tả lên bản 2.1 | `round2/checks/s5_reference_language_PLAN.md`, `_RESULT.md` | Coordinator (theo bằng chứng) |
 
 ## Sai lệch so với quy trình chuẩn (ghi để minh bạch)
 - **Review khác họ model đã có (GPT-6, 2026-11-20)** cho novelty và phản biện của cả hai proposal; các bản đặc tả gửi đi đã lược mục 13 và các câu dự đoán để reviewer tự đánh giá. Các sửa đổi sau review (D18, D19) **chưa** được review lại.
