@@ -35,7 +35,10 @@
 | D31 | Bộ pilot 0.1.4: bảng chấm dạng Excel có hướng dẫn, ví dụ, danh sách chọn; sửa lỗi ô bắt đầu bằng "-" bị đọc thành công thức | Tác giả báo lỗi `#NAME?` khi mở file CSV | Coordinator |
 | D32 | S1 (quyền theo người trong bộ nhớ dùng chung): kế hoạch viết trước; kết quả 4/4 cặp trùng khoá, 2/2 control; hai lượt săn tiền lệ: incremental, mô hình đe doạ còn là giả định với sản phẩm hiện nay | `round2/checks/s1_shared_graph_*`, `round2/05_NOVELTY/IDEA_S1_priorart_*` | Coordinator (theo bằng chứng) |
 | D33 | Sửa phân loại ở lượt chạy model mạnh (node dẫn xuất bị đếm nhầm là người); ghi rõ là hậu kiểm. Với sonnet/opus, việc dữ kiện bị gắn nhầm chỉ thấy ở 3/12 và 4/13 | `round2/checks/m1_real_model_RESULT.md` | Coordinator |
-| D34 | Một bài hay hai bài; venue security hay NLP — sau thí nghiệm trên hệ thống thật / agent dùng công cụ thật | `round2/07_SELECTION_R2.md` mục 8 | **Chờ tác giả** |
+| D34 | Một bài duy nhất về định danh người trong bộ nhớ agent; venue quyết định theo thí nghiệm trên hệ thống thật / agent thật | Tác giả đồng ý 2026-11-20, 22:14 | Tác giả |
+| D35 | S2 (agent xoá dữ liệu người được nhắc tên): ngưỡng "làm hại người thứ ba" không đạt (1/8 lượt); "xoá không hết" không được ủng hộ. Theo quy tắc đã thống nhất, venue nghiêng về ACL/EMNLP | `round2/checks/s2_agent_erasure_PLAN.md`, `_RESULT.md` | Coordinator (theo bằng chứng) |
+| D36 | Nhãn GPT-6 cho pilot thu nhỏ được lưu là "model chấm, tạm thời"; không dùng cho claim cho đến khi có nhãn của người | Tác giả: "Con người hiện tại chưa có, sẽ làm sau" | Tác giả / Coordinator |
+| D37 | Chốt venue (ACL/EMNLP ngay, hay thử thêm kịch bản khó hơn cho hướng security trước) | `round2/07_SELECTION_R2.md` mục 9 | **Chờ tác giả** |
 
 ## Sai lệch so với quy trình chuẩn (ghi để minh bạch)
 - **Review khác họ model đã có (GPT-6, 2026-11-20)** cho novelty và phản biện của cả hai proposal; các bản đặc tả gửi đi đã lược mục 13 và các câu dự đoán để reviewer tự đánh giá. Các sửa đổi sau review (D18, D19) **chưa** được review lại.
