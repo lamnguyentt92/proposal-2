@@ -22,6 +22,11 @@
 | D18 | P1: claim riêng của bộ nhớ là phần tăng do hợp nhất (C3); quy tắc đóng khung F1; thêm baseline bộ nhớ episodic; tách ba loại lỗi ở mức kho; Study 0 hai nhánh; thước đo cross-fitted (bộ pilot 0.1.1) | Reviewer: thiết kế cũ có thể cho kết quả có ý nghĩa thống kê mà không cô lập được cơ chế của bộ nhớ; ngưỡng 10% với 8 rater là 0 phiếu | Coordinator |
 | D19 | P2: thêm hợp đồng đúng-sai theo tác vụ, audit hai pha có trọng số, hai estimand cho C2, bốn ước lượng trên agent giữ lại, baseline kiểu VeriCUA; đổi câu định vị | Reviewer: chân trị chưa độc lập với công cụ; C2 có thể chỉ đo lệch phân bố; tiêu chí "trong 2 điểm" đạt được mà không cần hiệu chỉnh | Coordinator |
 | D20 | Gate G2 và Stage 6 của cả hai proposal: **WARN** sau review khác họ model | Verdict "incremental" và "weak reject ở giai đoạn ý tưởng" | **Chờ tác giả ký duyệt** |
+| D21 | Mở vòng ý tưởng 2: bỏ hạn 4 Jan 2027, không giới hạn nhân lực/máy, security lens bật (red/blue), novelty là tiêu chí số một | Tác giả phê bình vòng 1 cho ra ý tưởng incremental; lời tác giả 2026-11-20 | Tác giả |
+| D22 | Vòng 2: 4 ý tưởng vào vòng trong (M1, B1, E2, A2); cả 9 báo cáo săn tiền lệ đều "incremental"; không ý tưởng nào được trình là "novel" | `round2/05_NOVELTY/`, `round2/07_SELECTION_R2.md` | Coordinator (theo bằng chứng) |
+| D23 | Sửa nhận định của chính coordinator: so sánh "tên Việt 24–27% vs tên Anh 0%" bị nhiễu thiết kế; khi đổi họ, tiếng Anh là 17,1% | Referee tự chạy lại probe (`round2/checks/m1_referee_probe.json`) | Coordinator |
+| D24 | Bộ pilot 0.1.2: vá adapter Graphiti (driver Kuzu nhúng không chạy được) | Lỗi lộ ra khi chạy pipeline ingest đầy đủ offline | Coordinator |
+| D25 | Hướng đi sau vòng 2 (gộp phát hiện về tên vào P1 / theo M1R như bài security / vòng 3 từ dữ liệu riêng của tác giả) | `round2/07_SELECTION_R2.md` mục 6 | **Chờ tác giả** |
 
 ## Sai lệch so với quy trình chuẩn (ghi để minh bạch)
 - **Review khác họ model đã có (GPT-6, 2026-11-20)** cho novelty và phản biện của cả hai proposal; các bản đặc tả gửi đi đã lược mục 13 và các câu dự đoán để reviewer tự đánh giá. Các sửa đổi sau review (D18, D19) **chưa** được review lại.
