@@ -12,12 +12,13 @@ Ngày lập: 2026-11-20. Nguồn: câu trả lời trực tiếp của tác gi�
 ## Nhà nghiên cứu
 - Chuyên môn đã công bố/đang làm: kiểm thử tự động ứng dụng Android và khung đánh giá tự động; bảo mật IoT/smart-home (kiến trúc broker-less, RBAC).
 - Ngôn ngữ: tiếng Việt bản ngữ, tiếng Anh học thuật.
+- Reviewer: tác giả cho biết nhóm có đồng tác giả đủ điều kiện nhận review cho cả ARR (ACL) và ICML (2026-11-20).
 - Năng lực lý thuyết: tác giả để coordinator chọn phương án tối ưu → không giả định có chuyên gia online-learning theory; ý tưởng thuần định lý phải tự chứng minh được tính khả thi kỹ thuật.
 
 ## Tài nguyên
 - Tính toán: API thương mại (GPT/Claude/Gemini) + 1–2 GPU (chạy được model mở cỡ vừa, không huấn luyện quy mô lớn).
 - Con người cho dữ liệu: ≥ 2 annotator bản ngữ tiếng Việt, thạo tiếng Anh, annotate độc lập được.
-- Thiết bị/testbed (tác giả xác nhận 2026-11-20): **MacBook, máy Windows** (chạy emulator Android) và **3 điện thoại Android thật đã root bằng Magisk** — tác giả cho biết `adb root` dùng được và `su` vào được root. Còn phải kiểm tra khi cài đặt: benchmark nào chạy trên máy nào (Mac arm64 dùng AVD arm64; MobileWorld ghi tài liệu cho Linux/KVM và WSL2).
+- Thiết bị/testbed (tác giả xác nhận 2026-11-20): **MacBook (chip Intel), máy Windows** (chạy emulator Android) và **3 điện thoại Android thật đã root bằng Magisk** — tác giả cho biết `adb root` dùng được và `su` vào được root. Còn phải kiểm tra khi cài đặt: benchmark nào chạy trên máy nào (Mac arm64 dùng AVD arm64; MobileWorld ghi tài liệu cho Linux/KVM và WSL2).
 
 ## Venue mục tiêu (do tác giả chỉ định)
 - IJCAI 2027 Main Track, ICML 2027, ACL 2027 (qua ARR). Chỉ cần **2 proposal cuối** cho 3 venue này.
