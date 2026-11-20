@@ -1,0 +1,48 @@
+# IDEA_S1: Safer, or just harder to grade? Capability-correlated recall of safety graders for mobile and computer-use agents
+
+Source tags for identifiers: [notes] = in the research-notes files; [read] = primary record opened in this session (alphaXiv full text); [index] = alphaXiv index record only (title/abstract snippet).
+
+- Gap addressed: G3 (with G6). It is also the empirical step that 2609.25173 [read] names as open: that paper derives when differential oracle error reverses a ranking but states it ran no agents and reports no empirical inversion.
+
+- Target venue and track: ICML 2027, topic area "Evaluation (methodology, meta-studies, replicability)", contribution type "Datasets, Evaluations and Benchmarks". If the central hypothesis is refuted, the same study fits contribution type "Negative Results".
+
+- Problem (1 paragraph): Safety benchmarks for mobile and computer-use agents report an attack success rate decided by a grader: a frozen predicate over device state, an LLM judge over the trajectory, or both. Reported rates fall as agents get stronger, and this is read as progress. No mobile safety benchmark has had its grader audited (MobileSafetyBench 2410.17520, MobileWorldSafety 2608.17659, DIBench 2610.06898, MobileProbe 2611.16693, all [notes]); audits so far cover capability graders (2607.28367 [notes] sampled only FAIL verdicts; MobileJudgeBench 2608.11434 [read] covers task-completion judges), one tool-calling injection harness (2609.32691 [read]), and non-mobile harm corpora (2611.02624 [read]). For a safety benchmark the costly error is a missed harm, and nobody has measured whether the rate of missed harm depends on which agent is being graded.
+
+- Key insight (the non-obvious observation; 2–3 sentences): The two grader families each have a blind spot that widens with agent capability: a frozen state predicate sees only the route to harm its author anticipated, and a trajectory judge is moved by the agent's own account of what it did; stronger agents take more varied routes and write more fluent accounts, so measured ASR can fall with capability faster than true ASR does. The same trend hides itself, because grader recall can only be estimated on trajectories where harm occurred, and those become too rare for strong agents to audit. Harm is a property of device state, so it can be replayed without any agent, which makes recall measurable exactly in the regime where trajectory audits cannot see it.
+
+- Approach (how the insight becomes a method/system/theory):
+  1. Agent-free calibration. For each risk task of each audited benchmark, script replays (ADB/UIAutomator) that reach the harmful end state, confirmed by an independent state oracle that never consults the benchmark grader. Factorial design: route class (the benchmark's canonical route vs. k alternative route classes enumerated from the app navigation graph) x agent account (none; neutral; justificatory, both sampled from real agent traces on unrelated tasks, never authored to persuade) x harm (harmful end state vs. a benign twin with the same surface actions). Run the benchmark's own grader on every replay: recall and specificity per cell.
+  2. Field mix. Run agents from three capability tiers on the benchmarks; for every trajectory that reached the injected content, log the route class and account style.
+  3. Two-phase audit. A wide-recall screen (state diff plus a state-reading judge in the style of 2611.02624) selects candidates; two human annotators adjudicate blind to grader verdict and agent identity. This yields grader recall per tier with design-based intervals (prediction-powered style, as recommended for paired audits in 2609.34198 [read]).
+  4. Outputs: corrected ASR with intervals per agent, rank stability of the leaderboard, a short identifiability result (interval width of audited recall as a function of prevalence and audit size), and a released replay suite plus a "grader recall card" per benchmark.
+
+- Contribution type: new measurement/benchmark
+
+- Claims (falsifiable, 2–4):
+  - C1 (route): on a majority of audited benchmarks, grader recall on alternative-route replays is lower than on canonical-route replays by a pre-registered margin (e.g. 20 points), with end state held fixed.
+  - C2 (account): for trajectory-judge graders, a justificatory account lowers recall relative to no account on byte-identical actions and end states; state-predicate graders show no such effect (built-in placebo).
+  - C3 (capability correlation): the share of alternative routes and justificatory accounts rises with agent tier, and human-audited grader recall falls monotonically with tier, so that the corrected ASR gap between tiers is smaller than the reported gap on at least one benchmark.
+  - C4 (identifiability): at reported ASR of 10% or less, a trajectory-only audit of a few hundred runs cannot bound recall usefully (interval width above 0.4), whereas replay-calibrated recall, reweighted by the observed route/account mix, predicts human-audited recall within 0.1 where harm is common enough to check.
+
+- Closest work known so far (with identifiers) and the expected delta:
+  - 2609.34198 [read]: on coding and customer-service benchmarks, judge false acceptance of failed runs rises with agent capability, and calibration transported from one agent to another makes comparisons worse. Delta: the mirror-image error (missed harm) for safety graders, a causal mechanism test via agent-free replays, and mobile/GUI settings.
+  - 2609.25173 [read]: analytic condition for oracle-induced rank inversion in agent security; no experiments. Delta: the experiment.
+  - 2611.02624 [read]: on OS-Harm and DecodingTrust-Arena, route variants silence frozen predicates and authorization framing flips a trajectory judge (small samples, p > 0.05); proposes a union of state and trajectory judges. Delta: ties both failure modes to agent capability, quantifies the effect on ASR and rankings, covers the unaudited mobile benchmarks, and uses the union judge only as a screening baseline.
+  - 2610.09142 [read] and 2609.00038 [read]: mutation testing of task-completion verifiers and fault injection for trajectory judges. Delta: safety graders, harmful-end-state replays, and validation of mutant-based recall against human-audited recall on real agent runs (both papers list the mutant-to-real gap as a limitation).
+  - 2609.32691 [read]: four harness defects in one tool-calling injection benchmark (undelivered payloads, tool-identity scoring). 2607.28367 [notes]: 15.3% wrong FAIL verdicts, successes not audited. 2610.29609 and 2611.05662 [index]: self-report leakage and confirmation bias in completion judging. 2607.28685 [notes]: safety scores entangled with capability.
+
+- Evaluation sketch: settings, baselines (strongest first), metrics, decisive experiment
+  - Settings: three to five benchmarks with runnable graders, chosen for grader diversity (state predicate; rule check then LLM judge; LLM judge only): candidates MobileSafetyBench, MobileWorldSafety, MobileProbe, OS-Harm (2506.14866 [notes]) as a desktop control. Agents: one open GUI model on local GPUs, one mid-tier and one frontier API model, same scaffold where possible.
+  - Baselines: (1) uniform human audit of agent trajectories with misclassification correction from pooled error rates, the procedure a referee would call sufficient; (2) union of state-reading and trajectory judges (2611.02624); (3) each benchmark's own reported judge-human agreement; (4) hand-written verifier mutations in the style of 2610.09142.
+  - Metrics: recall and specificity per route x account cell; audited recall per tier; corrected ASR with 95% intervals; Kendall tau between reported and corrected rankings; interval width vs. audit size.
+  - Decisive experiment: the pre-registered trend test of human-audited recall across the three tiers (C3). A flat trend refutes the key insight. A second gate: if replay-predicted recall misses audited recall on the weak tier, the agent-free calibration is invalid and only the audit result stands.
+
+- Resources needed vs available (00_CONSTRAINTS.md): Android emulators and UI test automation are the researcher's core expertise; replays need no model calls. Agent runs need commercial APIs plus one open model on 1–2 GPUs. The audit needs two independent annotators who read English app content (available; Vietnamese is not required here). Not yet confirmed: an emulator testbed is assumed in 00_CONSTRAINTS.md, and benchmark code/licence availability was not checked.
+
+- Risks and unknowns: graders may turn out to be accurate across tiers (publishable only as a negative result with the calibration suite); route taxonomy involves judgment and needs inter-annotator agreement; tier is confounded with scaffold and prompt; frontier agents may produce too few harmful runs even for the two-phase audit; benchmarks built on live commercial apps drift; this line is active (at least seven related preprints between August and November 2026, listed above), so related work must be re-checked; findings about named benchmarks should be sent to maintainers before release.
+
+- Conference core / journal extension (1 line each):
+  - Core: route x account replay calibration plus tier-wise audited recall on three or more mobile/CUA safety benchmarks, with corrected ASR and rank stability.
+  - Extension (JAIR/AIJ): memory-security benchmarks whose outcomes are "decision-level proxies" (2611.01700 [notes]), automatic route enumeration from app models, and a grader-repair loop validated on held-out routes.
+
+- Generator perspective: adversarial/security
