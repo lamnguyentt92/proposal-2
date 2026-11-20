@@ -40,7 +40,9 @@
 | D36 | Nhãn GPT-6 cho pilot thu nhỏ được lưu là "model chấm, tạm thời"; không dùng cho claim cho đến khi có nhãn của người | Tác giả: "Con người hiện tại chưa có, sẽ làm sau" | Tác giả / Coordinator |
 | D37 | Cho hướng security thêm một cơ hội: chạy S3 (đại từ và tên gọi ngắn) | Lời tác giả 2026-11-20, 22:30 | Tác giả |
 | D38 | S3: ngưỡng "xoá làm hại người thứ ba" không đạt (1/4 và 0/4) → bỏ khung security cho bài này theo kế hoạch viết trước; "xoá không hết" đạt với agent rẻ hơn (3/4), nguyên nhân là dữ kiện đại từ bị ghi dưới tên người khác | `round2/checks/s3_agent_erasure_pronoun_PLAN.md`, `_RESULT.md` | Coordinator (theo bằng chứng) |
-| D39 | Chốt venue ACL/EMNLP cho bài duy nhất; hệ quả về quyền xem/xoá là một mục của bài | `round2/07_SELECTION_R2.md` mục 10 | **Chờ tác giả** |
+| D39 | Chốt venue ACL/EMNLP cho bài duy nhất; hệ quả về quyền xem/xoá là một mục của bài; đi tiếp dù gate novelty ở trạng thái WARN | Lời tác giả 2026-11-20, 22:41: "OK chốt" | Tác giả |
+| D40 | Viết lại đặc tả Proposal 1 (bản 2: định danh người khi agent ghi bộ nhớ tiếng Việt — tên riêng + quy chiếu ngôi thứ ba); bản 1 (từ thân tộc) thành một nghiên cứu con (C4) | Bằng chứng của vòng 2 và các lượt S1–S4 | Coordinator, theo quyết định D39 |
+| D41 | S4: quan sát "trùng tên làm dữ kiện đại từ bị ghi cho A" không được xác nhận (3/8 so với 2/8); quan sát mới về đại từ (0/12 tiếng Việt lưu đúng) được ghi là hậu kiểm | `round2/checks/s4_pronoun_misattribution_PLAN.md`, `_RESULT.md` | Coordinator (theo bằng chứng) |
 
 ## Sai lệch so với quy trình chuẩn (ghi để minh bạch)
 - **Review khác họ model đã có (GPT-6, 2026-11-20)** cho novelty và phản biện của cả hai proposal; các bản đặc tả gửi đi đã lược mục 13 và các câu dự đoán để reviewer tự đánh giá. Các sửa đổi sau review (D18, D19) **chưa** được review lại.
