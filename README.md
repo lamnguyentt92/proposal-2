@@ -39,6 +39,22 @@ quát chỉ được đưa ra nếu C2 có kết luận ở **cả hai** họ.
 **Điểm dừng:** K1 — mask báo động giả > 10% trên lộ trình đúng → oracle không dùng được → dừng; K2 — các ô của C2 không đủ
 cỡ ở cả hai họ → không có claim tổng quát → **không nộp ICML**; K2b — chỉ có kết luận ở một họ → chỉ claim họ đó, bạn quyết định lại venue; K3 — có bài công bố kiểm định này trước → quay lại phản biện.
 
+## Review khác họ model (GPT-6, 2026-11-20)
+
+- **Novelty: incremental**, C2 vẫn là khoảng trống mạnh nhất (chưa thấy ai so tỉ lệ sót trên lỗi gieo với lỗi thật theo từng loại).
+- **Referee: Borderline / Weak Reject ở giai đoạn ý tưởng**, significance 4/5, venue fit 4/5, nhưng soundness potential 2/5; dải
+  10–25%, lên 25–40% nếu chân trị được xác lập độc lập và pilot cho thấy các ô của C2 đủ dữ liệu.
+- **Hai điểm nặng nhất, đã sửa trong đặc tả:** (1) chân trị "mức trạng thái" dựng từ vài lộ trình mẫu và mask thì chưa độc lập
+  với chính công cụ — giờ có *hợp đồng đúng-sai theo tác vụ* viết trước, và audit hai pha có trọng số gồm cả lượt không bị gắn
+  cờ; (2) C2 có thể chỉ đo sự lệch phân bố giữa lỗi gieo và lỗi thật — giờ có hai estimand, ô không có hỗ trợ chung được báo
+  là "không nhận dạng được", và phép thử trên agent giữ lại phải thắng cả điểm gốc lẫn cách hiệu chỉnh từ lỗi thật.
+- Tiền lệ mới phải trích: arXiv:2610.16067 (gieo lỗi evaluator + phát lại 4.320 episode thật trên τ-bench, thứ hạng đổi), VeriCUA
+  (verifier đọc trạng thái, đã đánh giá trên AndroidWorld — nhưng lấy checker gốc làm chuẩn), Sauron, MobileWorld (201 tác vụ,
+  có backend).
+- 18/18 tài liệu reviewer nêu đều có thật (`ideation/XMODEL_VERIFY_P2.md`). Phân loại từng điểm: `ideation/XMODEL_TRIAGE_P2.md`.
+- Venue fit được reviewer này chấm 4/5 (cao hơn đánh giá trước), nên khuyến nghị chuyển sang NeurIPS E&D yếu đi.
+- **Đi tiếp cần bạn ký duyệt** (gate ở trạng thái WARN).
+
 ## Mức độ mới và độ phù hợp venue — nói thẳng
 
 - Hai lượt săn prior-art và một lượt quét lại: ***incremental***, với **một lõi còn sạch là C2**. Phần oracle, phần "thứ hạng
@@ -50,7 +66,7 @@ cỡ ở cả hai họ → không có claim tổng quát → **không nộp ICML
   ICML và thêm AppWorld**; khuyến nghị kia được ghi lại như một rủi ro, và K2/K2b xác định khi nào lùi.
 - Phương án thay thế cho slot ICML: ý tưởng R1 (red-teaming như lấy mẫu "loài chưa thấy") có điểm ngang, nhưng chưa qua phản
   biện giả lập — xem `ideation/07_SELECTION.md`.
-- Mọi review là cùng họ model (provisional).
+- Đánh giá ở mục này là của các reviewer cùng họ model, viết trước review của GPT-6.
 
 ## Việc cần làm ngay (theo thứ tự)
 
@@ -60,7 +76,7 @@ cỡ ở cả hai họ → không có claim tổng quát → **không nộp ICML
 4. **Đăng ký trước C2** — và **viết phân tích power** (điểm còn mở trong bảng atom): toán tử gieo lỗi đóng băng, danh sách họ checker, margin, cỡ ô tối thiểu, agent giữ lại.
 5. **Pilot (b) ở cả hai họ:** một agent rẻ trên ~30 template AndroidWorld và một tập con AppWorld; đếm lỗi thật theo từng loại (K2).
 6. **Kiểm tra khả thi nhánh máy thật:** bạn cho biết `adb root` và `su` dùng được trên 3 máy; còn phải thử các bước setup riêng của emulator (đặt lại đồng hồ, khôi phục snapshot app, bộ APK cho API 33) trên từng dòng máy. Dùng máy không chứa dữ liệu cá nhân.
-7. **Review khác họ model:** chạy `ideation/XMODEL_NOVELTY_P2_PROMPT.md` và `ideation/XMODEL_REDTEAM_P2_PROMPT.md` trên GPT/Gemini — nhánh AppWorld và nhánh máy thật **chưa** qua phản biện nào.
+7. **Viết hợp đồng đúng-sai** cho các template của pilot (hiệu ứng bắt buộc / cấm / chấp nhận được / mơ hồ) trước khi xem bất kỳ lượt chạy nào của agent.
 
 ## Venue
 

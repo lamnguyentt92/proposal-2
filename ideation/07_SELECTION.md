@@ -74,5 +74,25 @@ biện giả lập, chưa audit khả thi**, phương pháp vay mượn toàn b�
 **IJCAI 2027:** không đề xuất proposal. Proposal gốc bị loại; không ý tưởng dự phòng nào hợp IJCAI hơn hai lựa chọn trên; và
 IJCAI chỉ cho dùng LLM để trau chuốt văn bản do tác giả tự viết, nên hồ sơ AI hỗ trợ này không dùng trực tiếp được ở đó.
 
+## 6. Review khác họ model (GPT-6, 2026-11-20)
+
+Bốn review nguyên văn: `XMODEL_*_RESPONSE.md`. Kiểm chứng trích dẫn: `XMODEL_VERIFY_P1.md`, `XMODEL_VERIFY_P2.md` (30/30 tài liệu
+được nêu đều có thật; vài mô tả cần lưu ý). Phân loại từng điểm: `XMODEL_TRIAGE_P1.md`, `XMODEL_TRIAGE_P2.md`.
+
+| | Proposal 1 (ACL) | Proposal 2 (ICML) |
+|---|---|---|
+| Verdict novelty | Incremental (C0, C1, C4 chưa ai làm; C2, C3, C5 bị chiếm một phần) | Incremental (C2 chưa ai làm; C1, C3, C4, C5 bị chiếm một phần) |
+| Verdict referee ở giai đoạn ý tưởng | Weak Reject | Borderline / Weak Reject |
+| Điểm (1–5): novelty / significance / depth / soundness potential / evaluation / clarity / venue fit | 4 / 3 / 3 / **2** / 3 / 4 / 4 | 3 / 4 / 3 / **2** / 3 / 4 / 4 |
+| Dải main track (đánh giá, không phải phép đo) | 10–25% | 10–25%; 25–40% nếu có chân trị độc lập và ô C2 đủ dữ liệu |
+| Điểm yếu nặng nhất | Chưa cô lập được hiện tượng riêng của bộ nhớ; thước đo so với người bản ngữ bị lỗi | Chân trị mức trạng thái chưa độc lập với công cụ; C2 có thể chỉ đo lệch phân bố |
+
+**So với đánh giá cùng họ model:** dải xác suất trùng nhau ở cả hai proposal. Khác biệt: novelty của P1 hạ từ "lõi novel"
+xuống "incremental"; venue fit của P2 được chấm cao hơn (4/5 so với 2,5–3/5), nên khuyến nghị step-down của P2 yếu đi.
+Cả hai reviewer GPT-6 đều chấm **soundness potential 2/5** — thấp hơn mọi điểm cùng họ model, và là lý do chính của verdict.
+
+**Trạng thái gate:** G2 (novelty) và Stage 6 đã có review khác họ model → **WARN** cho cả hai proposal (verdict "incremental" và
+"weak reject ở giai đoạn ý tưởng"). Đi tiếp cần tác giả ký duyệt. Các điểm được nhận đã đưa vào đặc tả và bộ pilot.
+
 ## 5. Phương án bị loại và lý do
 Xem `IDEA_REGISTRY.md`.
