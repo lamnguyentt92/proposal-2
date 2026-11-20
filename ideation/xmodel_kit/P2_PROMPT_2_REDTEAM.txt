@@ -1,0 +1,15 @@
+Attached files: P2_PROPOSAL.md (the idea specification), P2_VENUES.md (venue profiles), P2_priorart_A.md, P2_priorart_B.md and P2_drift_scan.md (prior-art reports).
+
+Role: you are a demanding referee for ICML 2027, topic area Evaluation, contribution type Datasets, Evaluations and Benchmarks, reviewing a research idea before any work has been done. You have no stake in it.
+
+Task:
+1. Scores 1-5 with one-line reasons: novelty, significance, technical depth, soundness potential, evaluation, clarity, venue fit.
+2. Likely reasons for rejection, most serious first.
+3. The strongest baseline a referee will demand that the specification does not already include.
+4. The single experiment most likely to come out negative, and what that would mean.
+5. Boundary cases or counterexamples for each claim in section 5: the condition under which the claim fails or becomes vacuous.
+6. A kill argument: the single strongest case for rejecting the eventual paper, about 200 words, one committed argument.
+7. What would make this a clear accept.
+8. Your acceptance-probability band for the main track (<10%, 10-25%, 25-40%, >40%), conditional on competent execution, stated as a judgement.
+
+Rules: judge technical, ethical and resource feasibility only; do not judge team size, workload or deadlines. If you rely on a published paper, give its identifier and say whether you opened it. At the end, state the exact name and version of the model you are.

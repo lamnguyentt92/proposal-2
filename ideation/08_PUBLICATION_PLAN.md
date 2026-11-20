@@ -3,6 +3,19 @@
 Nguyên tắc: thời hạn **không** quyết định ý tưởng. Nếu chưa qua pilot gate kịp một chu kỳ, chuyển sang chu kỳ kế tiếp.
 Ngày tháng lấy từ `01_VENUES.md` (đã kiểm chứng từ CFP chính thức ngày 2026-11-20).
 
+## Thứ tự ưu tiên (quyết định của tác giả, 2026-11-20)
+
+Quy tắc: nếu không kịp cả hai bài, ưu tiên bài có khả năng được nhận và novelty cao nhất. Áp dụng: **Proposal 1 trước,
+Proposal 2 sau** (P1: novelty 3,5, lõi *novel*, dải main track 10–25% ở đầu trên; P2: novelty 3,0, *incremental*, dải 10–25% ở nửa dưới —
+đánh giá của người chấm, không phải phép đo).
+
+Hệ quả:
+- P1 được dùng trước mọi nguồn lực dùng chung (thời gian của tác giả, annotator, ngân sách API).
+- **Không nộp một bản P1 rút gọn chỉ để kịp ARR 4 Jan 2027.** Bản rút gọn (bỏ Study 0, bỏ gold phân bố) làm giảm đúng thứ mà
+  quy tắc ưu tiên: khả năng được nhận. Nộp chu kỳ 4 Jan chỉ khi pilot gate K1–K3 đã qua **và** Study 0 cùng gold phân bố thu
+  kịp; nếu không, nộp chu kỳ ARR kế tiếp với bản đầy đủ (ngày các chu kỳ sau và venue nhận commit: tra aclrollingreview.org).
+- P2 nhắm ICML 22 Jan 2027 chỉ khi không lấy nguồn lực của P1 và các pilot gate của nó đã qua; nếu không → NeurIPS 2027.
+
 ## Proposal 1 — ACL 2027 (qua ARR)
 
 **Bài hội nghị (8 trang long paper).** Một đóng góp sắc: ghi bộ nhớ từ tiếng Việt đòi hỏi quy chiếu ngôi theo dyad, và
