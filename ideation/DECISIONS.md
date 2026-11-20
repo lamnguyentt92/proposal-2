@@ -14,7 +14,7 @@
 | D10 | Sau kill argument: sửa spec (K1–K3 thành điểm dừng thật; C2 của P2 thành kiểm định theo mode) | Atomiser: P1 1 đã trả lời/4 một phần/1 chưa; P2 1/4/1 | Coordinator |
 | D11 | P1 (ACL) + P2 (ICML) là 2 proposal cuối; không đề xuất IJCAI | Điểm và gate ở `07_SELECTION.md` | **Tác giả xác nhận 2026-11-20** |
 | D12 | P2 giữ đích ICML 2027 và **thêm AppWorld làm benchmark bắt buộc** (họ thứ hai) để claim tính tổng quát; không step-down lúc này | Tác giả quyết định; khuyến nghị của hai người chấm (NeurIPS E&D là "nhà" kỳ vọng) được ghi lại như một rủi ro, K2/K2b xác định khi nào step-down | **Tác giả, 2026-11-20** |
-| D13 | Testbed của P2: máy tính chạy emulator + 3 điện thoại Android thật root bằng Magisk; thêm nhánh lặp lại trên máy thật (claim hỗ trợ C5) | Tác giả khai báo tài nguyên; máy thật cho phép kiểm tra kết quả không phải là artefact của emulator | Tác giả (tài nguyên) + coordinator (thiết kế) |
+| D13 | Testbed của P2: MacBook + máy Windows chạy emulator, 3 điện thoại Android thật root bằng Magisk (`adb root` và `su` dùng được, theo tác giả); thêm nhánh lặp lại trên máy thật (claim hỗ trợ C5) | Tác giả khai báo tài nguyên; máy thật cho phép kiểm tra kết quả không phải là artefact của emulator | Tác giả (tài nguyên) + coordinator (thiết kế) |
 
 ## Sai lệch so với quy trình chuẩn (ghi để minh bạch)
 - **Chưa có review khác họ model.** Mọi verdict novelty và phản biện là same-family (provisional). File prompt cho đường thủ công đã chuẩn bị (`XMODEL_*`). Gate G2 và Stage 6 chỉ thực sự qua khi có review khác họ model hoặc tác giả ghi miễn trừ.

@@ -52,12 +52,12 @@ agent hay không, đo được nhờ chân trị mức trạng thái.
 Artifact: state observer, script lộ trình tham chiếu, mask, kill matrix, nhãn audit, code phân tích (Apache-2.0).
 
 **Mốc:**
-1. Testbed đã được tác giả xác nhận (máy tính chạy emulator + 3 điện thoại root bằng Magisk). Kiểm tra ảo hoá trên máy tính (Linux: `/dev/kvm`).
+1. Testbed đã được tác giả xác nhận (MacBook, máy Windows, 3 điện thoại root bằng Magisk có `adb root`). Khi cài đặt: xác định benchmark nào chạy trên máy nào.
 2. Pilot (a) không cần agent: mask học trên một lộ trình đúng, đo báo động giả trên lộ trình đúng khác (K1).
 3. Đăng ký trước C2: toán tử gieo lỗi (đóng băng), họ checker, margin, cỡ ô tối thiểu, agent giữ lại; **viết phân tích power**.
 4. Pilot (b) với một agent rẻ trên ~30 template (K2).
 5. Review khác họ model (file `XMODEL_*_P2_*`).
-6. Dựng AppWorld và tái lập kết quả mutant đã công bố của arXiv:2610.09142; kiểm tra khả thi nhánh máy thật (`su -c` thay cho `adb root`).
+6. Dựng AppWorld và tái lập kết quả mutant đã công bố của arXiv:2610.09142; kiểm tra khả thi nhánh máy thật (các bước setup riêng của emulator trên từng dòng máy).
 7. Chạy đầy đủ trên **AndroidWorld + MobileWorld + AppWorld** (AppWorld là bắt buộc theo quyết định của tác giả) → audit mù → phân tích → lặp lại trên máy thật cho 10–15 template.
 8. Viết → hai vòng review nội bộ.
 

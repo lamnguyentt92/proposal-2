@@ -5,7 +5,7 @@
 **Trạng thái (2026-11-20): CONDITIONAL GO — phải qua pilot gate (không cần agent) trước.** Chưa xây gì, chưa chạy thí nghiệm, chưa có kết quả nào.
 
 **Quyết định của tác giả (2026-11-20):** chốt proposal này; giữ đích **ICML 2027** và thêm **AppWorld** làm benchmark bắt buộc
-để claim tính tổng quát; testbed gồm một máy tính chạy emulator và **3 điện thoại Android thật đã root (Magisk)**.
+để claim tính tổng quát; testbed gồm MacBook, máy Windows và **3 điện thoại Android thật đã root (Magisk, có `adb root`)**.
 
 Đây là **ý tưởng mới**, thay cho hai proposal của GPT-6 đã bị loại (`PROVENANCE-SUFFICIENT` cho IJCAI và
 `REVOCATION-FEEDBACK` cho ICML — lý do ở `ideation/AUDIT_GPT6_PROPOSALS.md`). Đặc tả đầy đủ: [`PROPOSAL.md`](PROPOSAL.md).
@@ -54,12 +54,12 @@ cỡ ở cả hai họ → không có claim tổng quát → **không nộp ICML
 
 ## Việc cần làm ngay (theo thứ tự)
 
-1. **Kiểm tra máy tính chạy emulator:** có hỗ trợ ảo hoá cho emulator (Linux: tồn tại `/dev/kvm`; Mac arm64 chạy AVD arm64 gốc). Emulator không cần GPU.
+1. **Cài môi trường:** AndroidWorld trên MacBook (Mac arm64 dùng AVD arm64) hoặc máy Windows; MobileWorld ghi tài liệu cho Linux/KVM và WSL2 nên máy Windows là ứng viên. Emulator không cần GPU.
 2. **Pilot (a), không cần agent:** ~15 template AndroidWorld; viết ≥ 2 lộ trình UIAutomator đúng mỗi template; học mask trên một lộ trình, đo báo động giả trên lộ trình còn lại (K1).
 3. **Dựng AppWorld** (không cần emulator) và tái lập kết quả mutant đã công bố của arXiv:2610.09142; xác nhận ở commit được ghim rằng AppWorld có kèm lời giải tham chiếu.
 4. **Đăng ký trước C2** — và **viết phân tích power** (điểm còn mở trong bảng atom): toán tử gieo lỗi đóng băng, danh sách họ checker, margin, cỡ ô tối thiểu, agent giữ lại.
 5. **Pilot (b) ở cả hai họ:** một agent rẻ trên ~30 template AndroidWorld và một tập con AppWorld; đếm lỗi thật theo từng loại (K2).
-6. **Kiểm tra khả thi nhánh máy thật:** AndroidWorld lấy quyền root bằng `adb root`, thứ mà bản build thương mại root bằng Magisk thường không có → phải đọc trạng thái qua `su -c`. Dùng máy đã factory-reset, không tài khoản cá nhân, không SIM.
+6. **Kiểm tra khả thi nhánh máy thật:** bạn cho biết `adb root` và `su` dùng được trên 3 máy; còn phải thử các bước setup riêng của emulator (đặt lại đồng hồ, khôi phục snapshot app, bộ APK cho API 33) trên từng dòng máy. Dùng máy không chứa dữ liệu cá nhân.
 7. **Review khác họ model:** chạy `ideation/XMODEL_NOVELTY_P2_PROMPT.md` và `ideation/XMODEL_REDTEAM_P2_PROMPT.md` trên GPT/Gemini — nhánh AppWorld và nhánh máy thật **chưa** qua phản biện nào.
 
 ## Venue
