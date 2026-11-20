@@ -27,6 +27,10 @@
 | D23 | Sửa nhận định của chính coordinator: so sánh "tên Việt 24–27% vs tên Anh 0%" bị nhiễu thiết kế; khi đổi họ, tiếng Anh là 17,1% | Referee tự chạy lại probe (`round2/checks/m1_referee_probe.json`) | Coordinator |
 | D24 | Bộ pilot 0.1.2: vá adapter Graphiti (driver Kuzu nhúng không chạy được) | Lỗi lộ ra khi chạy pipeline ingest đầy đủ offline | Coordinator |
 | D25 | Hướng đi sau vòng 2 (gộp phát hiện về tên vào P1 / theo M1R như bài security / vòng 3 từ dữ liệu riêng của tác giả) | `round2/07_SELECTION_R2.md` mục 6 | **Chờ tác giả** |
+| D26 | Dùng API key do tác giả cấp cho thí nghiệm, chỉ với hai model rẻ nhất (`claude-haiku-4-5-20251001`, `claude-haiku-5-5`); key lưu ngoài repo, không ghi vào file hay log | Lời tác giả 2026-11-20: "chọn model tiết kiệm" | Tác giả |
+| D27 | Bộ pilot 0.1.3: cho phép bỏ tham số temperature và seed (model mới từ chối temperature); ghi token vào nhật ký | Lỗi 400 khi gọi `claude-haiku-5-5` | Coordinator |
+| D28 | M1R: kế hoạch và cách đọc cho lượt chạy model thật được viết trước khi chạy; kết quả: C1 đứng vững trên Graphiti (12/13 ở cả hai model); phân loại chi tiết thêm sau được ghi là mô tả | `round2/checks/m1_real_model_PLAN.md`, `m1_real_model_RESULT.md` | Coordinator (theo bằng chứng) |
+| D29 | Sai sót của coordinator: một lượt chạy bị mất kết quả do lỗi harness, lãng phí 221.206 token vào và 10.939 token ra | Ghi ở mục Deviations của kế hoạch | Coordinator |
 
 ## Sai lệch so với quy trình chuẩn (ghi để minh bạch)
 - **Review khác họ model đã có (GPT-6, 2026-11-20)** cho novelty và phản biện của cả hai proposal; các bản đặc tả gửi đi đã lược mục 13 và các câu dự đoán để reviewer tự đánh giá. Các sửa đổi sau review (D18, D19) **chưa** được review lại.
