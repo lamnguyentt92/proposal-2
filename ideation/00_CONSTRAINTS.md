@@ -17,7 +17,7 @@ Ngày lập: 2026-11-20. Nguồn: câu trả lời trực tiếp của tác gi�
 ## Tài nguyên
 - Tính toán: API thương mại (GPT/Claude/Gemini) + 1–2 GPU (chạy được model mở cỡ vừa, không huấn luyện quy mô lớn).
 - Con người cho dữ liệu: ≥ 2 annotator bản ngữ tiếng Việt, thạo tiếng Anh, annotate độc lập được.
-- Thiết bị/testbed: (chưa khai báo) — giả định có emulator Android theo chuyên môn sẵn có; cần tác giả xác nhận nếu ý tưởng dùng tới.
+- Thiết bị/testbed (tác giả xác nhận 2026-11-20): một máy tính để chạy emulator Android và **3 điện thoại Android thật đã root bằng Magisk**. Còn phải kiểm tra: máy tính có hỗ trợ ảo hoá cho emulator (Linux: `/dev/kvm`); trên máy thật, `adb root` thường không dùng được với bản build thương mại root bằng Magisk nên phải đọc trạng thái qua `su -c`.
 
 ## Venue mục tiêu (do tác giả chỉ định)
 - IJCAI 2027 Main Track, ICML 2027, ACL 2027 (qua ARR). Chỉ cần **2 proposal cuối** cho 3 venue này.

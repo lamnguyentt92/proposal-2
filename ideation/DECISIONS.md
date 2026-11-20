@@ -12,13 +12,15 @@
 | D8 | Một lần quay lại Stage 4: L1→L1R, F1→F1R, V1→V1R | Cả 4 ý tưởng bị xếp "incremental"; quy tắc cho phép một lần mài lại insight | Coordinator |
 | D9 | Sau phản biện giả lập: thiết kế lại L1R→L1S, F1R→F1S | Referee: kết quả L1R đúng theo cấu tạo; devil's advocate: công cụ metamorphic của F1R bị gold-diff chi phối | Coordinator |
 | D10 | Sau kill argument: sửa spec (K1–K3 thành điểm dừng thật; C2 của P2 thành kiểm định theo mode) | Atomiser: P1 1 đã trả lời/4 một phần/1 chưa; P2 1/4/1 | Coordinator |
-| D11 | Đề xuất P1 (ACL) + P2 (ICML) làm 2 proposal cuối; không đề xuất IJCAI | Điểm và gate ở `07_SELECTION.md` | **Chờ tác giả xác nhận** |
-| D12 | Step-down của P2 (NeurIPS E&D / ISSTA / ICSE) | Hai người chấm khuyên; novelty incremental, fit ICML 3/5 | **Chờ tác giả quyết** |
+| D11 | P1 (ACL) + P2 (ICML) là 2 proposal cuối; không đề xuất IJCAI | Điểm và gate ở `07_SELECTION.md` | **Tác giả xác nhận 2026-11-20** |
+| D12 | P2 giữ đích ICML 2027 và **thêm AppWorld làm benchmark bắt buộc** (họ thứ hai) để claim tính tổng quát; không step-down lúc này | Tác giả quyết định; khuyến nghị của hai người chấm (NeurIPS E&D là "nhà" kỳ vọng) được ghi lại như một rủi ro, K2/K2b xác định khi nào step-down | **Tác giả, 2026-11-20** |
+| D13 | Testbed của P2: máy tính chạy emulator + 3 điện thoại Android thật root bằng Magisk; thêm nhánh lặp lại trên máy thật (claim hỗ trợ C5) | Tác giả khai báo tài nguyên; máy thật cho phép kiểm tra kết quả không phải là artefact của emulator | Tác giả (tài nguyên) + coordinator (thiết kế) |
 
 ## Sai lệch so với quy trình chuẩn (ghi để minh bạch)
 - **Chưa có review khác họ model.** Mọi verdict novelty và phản biện là same-family (provisional). File prompt cho đường thủ công đã chuẩn bị (`XMODEL_*`). Gate G2 và Stage 6 chỉ thực sự qua khi có review khác họ model hoặc tác giả ghi miễn trừ.
 - **Devil's advocate cho L1R không chạy được** (lỗi khởi chạy); vai trò được bù bằng referee review, kill argument và atomiser.
 - **Panel phản biện rút gọn:** V1R chỉ có một review gộp; R1 chưa qua Stage 6.
+- **Nhánh AppWorld và nhánh máy thật của P2** được thêm sau lượt quét novelty và phản biện cuối; chưa bị tấn công. Số liệu AppWorld (9 app, 457 API, 750 tác vụ, đánh giá theo trạng thái có kiểm collateral damage) lấy từ bản ghi bài báo; việc AppWorld kèm lời giải tham chiếu là theo báo cáo audit khả thi, cần xác nhận ở commit được ghim.
 - **Sau thiết kế lại lần cuối** (spec hiện tại), C1/C3 của P1 và C2 của P2 mới chỉ qua một drift scan/kill argument, chưa qua hai hunter độc lập.
 - **Calibration venue** dựa trên tiêu đề và abstract, chưa đọc toàn văn 10–20 bài mỗi venue.
 - **Chưa có `02_bibliography.bib`.** Danh mục tham khảo nằm trong các báo cáo `05_NOVELTY/` kèm mức kiểm chứng (toàn văn / abstract / chỉ mục). Tạo BibTeX từ identifier khi viết bài và đối chiếu từng mục với bản ghi gốc.

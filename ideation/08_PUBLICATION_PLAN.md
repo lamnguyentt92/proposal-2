@@ -45,24 +45,25 @@ agent hay không, đo được nhờ chân trị mức trạng thái.
 | Mở đầu + ví dụ xuyên suốt (một template AndroidWorld có checker chỉ kiểm postcondition) | 1,0 |
 | Định nghĩa lỗi phán quyết + phát biểu nhận dạng | 1,0 |
 | Oracle vi sai với mask đa lộ trình; kiểm chứng | 1,5 |
-| C1 (tỉ lệ sai hai chiều, phần chỉ thấy ở mức trạng thái) | 1,25 |
+| C1 (tỉ lệ sai hai chiều trên 3 benchmark, phần chỉ thấy ở mức trạng thái) | 1,25 |
 | C2 (kiểm định transfer theo mode, đăng ký trước) | 1,75 |
 | C3–C4, liên quan, giới hạn | 1,5 |
 
 Artifact: state observer, script lộ trình tham chiếu, mask, kill matrix, nhãn audit, code phân tích (Apache-2.0).
 
 **Mốc:**
-1. Xác nhận máy chạy emulator (x86 Linux + KVM hoặc Mac arm64).
+1. Testbed đã được tác giả xác nhận (máy tính chạy emulator + 3 điện thoại root bằng Magisk). Kiểm tra ảo hoá trên máy tính (Linux: `/dev/kvm`).
 2. Pilot (a) không cần agent: mask học trên một lộ trình đúng, đo báo động giả trên lộ trình đúng khác (K1).
 3. Đăng ký trước C2: toán tử gieo lỗi (đóng băng), họ checker, margin, cỡ ô tối thiểu, agent giữ lại; **viết phân tích power**.
 4. Pilot (b) với một agent rẻ trên ~30 template (K2).
 5. Review khác họ model (file `XMODEL_*_P2_*`).
-6. Chạy đầy đủ (AndroidWorld + MobileWorld; AppWorld cho claim tổng quát) → audit mù → phân tích.
-7. Viết → hai vòng review nội bộ.
+6. Dựng AppWorld và tái lập kết quả mutant đã công bố của arXiv:2610.09142; kiểm tra khả thi nhánh máy thật (`su -c` thay cho `adb root`).
+7. Chạy đầy đủ trên **AndroidWorld + MobileWorld + AppWorld** (AppWorld là bắt buộc theo quyết định của tác giả) → audit mù → phân tích → lặp lại trên máy thật cho 10–15 template.
+8. Viết → hai vòng review nội bộ.
 
 Chu kỳ: ICML 2027 abstract **14 Jan**, full paper **22 Jan 2027** (Rio de Janeiro, 31 Jul – 6 Aug 2027). Nếu chưa qua mốc:
-NeurIPS 2027. **Step-down do tác giả quyết:** NeurIPS Evaluations & Datasets (hai người chấm coi là "nhà" kỳ vọng),
-ISSTA/ICSE. Điều kiện nộp ICML: một reciprocal reviewer mỗi bài; tác giả không đủ điều kiện review chỉ đứng tên ≤ 2 bài;
+NeurIPS 2027. **Tác giả đã chọn giữ ICML** (2026-11-20); NeurIPS Evaluations & Datasets và
+ISSTA/ICSE là phương án lùi khi K2/K2b kích hoạt. Điều kiện nộp ICML: một reciprocal reviewer mỗi bài; tác giả không đủ điều kiện review chỉ đứng tên ≤ 2 bài;
 bắt buộc AI Disclosure Statement (khai cả ideation, tổng hợp tài liệu, thiết kế thí nghiệm).
 
 **Bản mở rộng tạp chí:** JAIR hoặc AIJ (đều nhận bản mở rộng đáng kể). Nội dung mới: benchmark an toàn (chiều "bỏ sót tác

@@ -47,7 +47,15 @@ còn mới". Sự khác biệt giữa các finalist nằm ở việc lõi đó c
 4. Quét novelty lại cho C1/C3 bản mới + review khác họ model.
 5. Người bản ngữ xác nhận các ví dụ tiếng Việt.
 
-## 4. Đề xuất cho tác giả (tác giả là người quyết định)
+## 4. Quyết định của tác giả (2026-11-20)
+
+- **Chốt cặp proposal:** P1 (ACL 2027) và P2 (ICML 2027).
+- **P2 giữ đích ICML** và thêm **AppWorld** làm benchmark bắt buộc để tăng tính tổng quát (không step-down lúc này).
+- **Testbed P2:** máy tính chạy emulator + 3 điện thoại Android thật đã root (Magisk).
+
+Phần dưới đây là đề xuất gốc của coordinator, giữ lại để đối chiếu.
+
+## 4b. Đề xuất ban đầu cho tác giả
 
 | Slot | Đề xuất | Venue | Trạng thái |
 |---|---|---|---|

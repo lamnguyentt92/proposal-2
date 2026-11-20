@@ -4,12 +4,15 @@
 
 **Trạng thái (2026-11-20): CONDITIONAL GO — phải qua pilot gate (không cần agent) trước.** Chưa xây gì, chưa chạy thí nghiệm, chưa có kết quả nào.
 
+**Quyết định của tác giả (2026-11-20):** chốt proposal này; giữ đích **ICML 2027** và thêm **AppWorld** làm benchmark bắt buộc
+để claim tính tổng quát; testbed gồm một máy tính chạy emulator và **3 điện thoại Android thật đã root (Magisk)**.
+
 Đây là **ý tưởng mới**, thay cho hai proposal của GPT-6 đã bị loại (`PROVENANCE-SUFFICIENT` cho IJCAI và
 `REVOCATION-FEEDBACK` cho ICML — lý do ở `ideation/AUDIT_GPT6_PROPOSALS.md`). Đặc tả đầy đủ: [`PROPOSAL.md`](PROPOSAL.md).
 
 ## Ý tưởng trong một đoạn
 
-Benchmark mobile agent (AndroidWorld, MobileWorld) chấm một lượt chạy bằng đoạn code kiểm tra trạng thái thiết bị. Năm 2026
+Benchmark agent có trạng thái (AndroidWorld, MobileWorld trên Android; AppWorld ở thế giới API) chấm một lượt chạy bằng đoạn code kiểm tra trạng thái. Năm 2026
 có cả một làn sóng bài "audit bộ chấm" bằng cách gieo lỗi vào lượt chạy mẫu rồi đếm xem bộ chấm bỏ sót bao nhiêu — đó là
 kết quả về **tồn tại**. Nhưng một PASS sai cần hai thứ trùng nhau: điểm mù của bộ chấm **và** một lỗi thật của agent rơi
 đúng vào đó. Câu hỏi đúng vì thế là theo từng loại lỗi: *bộ chấm bỏ sót lỗi thật của agent có nhiều như bỏ sót lỗi gieo
@@ -26,9 +29,15 @@ không tất định) thì **đo** được bằng cách chạy nhiều lộ tr�
 | C2 | **Transfer theo mode:** với từng họ checker × loại lỗi, tỉ lệ sót trên lỗi thật của agent bằng tỉ lệ sót trên lỗi gieo theo công thức gieo đã công bố (kiểm định tương đương, đăng ký trước) | Đúng → hiệu chỉnh được điểm agent mới không cần audit; Sai → đo được độ lệch của mutation audit; Không kết luận ở > ½ số ô → K2 |
 | C3 | Lỗi phán quyết khác nhau giữa các agent; có đổi thứ hạng hay không (kỳ vọng: null) | Báo cáo cả hai chiều |
 | C4 | Oracle vi sai với mask đa lộ trình: precision ≥ 0,8 so với audit mù, recall cao hơn LLM verifier, rẻ hơn audit toàn bộ | Precision < 0,8 |
+| C5 | (hỗ trợ) Kết quả không phải artefact của emulator: lặp lại 10–15 template trên 3 điện thoại thật đã root | Mask không chuyển được sang máy thật → chỉ phát biểu cho cấu hình emulator |
+
+**Ba benchmark, hai họ.** Họ Android GUI (AndroidWorld, MobileWorld) và họ thế giới API (AppWorld — 9 app, 457 API, 750 tác vụ;
+bộ chấm theo trạng thái có kiểm "collateral damage" ngay từ thiết kế). AppWorld cho hai thứ: một đối chứng về thiết kế bộ
+chấm, và phép thử C2 sạch nhất vì dùng **nguyên vẹn** các mutant đã công bố của arXiv:2610.09142, không phải port. Claim tổng
+quát chỉ được đưa ra nếu C2 có kết luận ở **cả hai** họ.
 
 **Điểm dừng:** K1 — mask báo động giả > 10% trên lộ trình đúng → oracle không dùng được → dừng; K2 — các ô của C2 không đủ
-cỡ → không có claim tổng quát → **không nộp ICML**; K3 — có bài công bố kiểm định này trước → quay lại phản biện.
+cỡ ở cả hai họ → không có claim tổng quát → **không nộp ICML**; K2b — chỉ có kết luận ở một họ → chỉ claim họ đó, bạn quyết định lại venue; K3 — có bài công bố kiểm định này trước → quay lại phản biện.
 
 ## Mức độ mới và độ phù hợp venue — nói thẳng
 
@@ -37,20 +46,21 @@ cỡ → không có claim tổng quát → **không nộp ICML**; K3 — có bà
 - Đã biết trước: MobileJudgeBench (arXiv:2608.11434) cho thấy khoảng 1,4% PASS của AndroidWorld sai và ~13% thành công thật
   bị từ chối — nhưng chỉ từ ảnh màn hình, 52/116 template, không khoảng tin cậy.
 - Điểm rubric: **3,08 / 3,23** trên 5. **Chưa vượt ngưỡng A\* trên giấy.** Venue fit ICML được chấm 3/5.
-- **Cả hai người chấm khuyên coi NeurIPS Evaluations & Datasets là "nhà" kỳ vọng và ICML là mục tiêu vươn tới** (lựa chọn
-  khác: ISSTA/ICSE). **Quyết định step-down là của bạn.**
+- Cả hai người chấm khuyên coi NeurIPS Evaluations & Datasets là "nhà" kỳ vọng và ICML là mục tiêu vươn tới. **Bạn đã chọn giữ
+  ICML và thêm AppWorld**; khuyến nghị kia được ghi lại như một rủi ro, và K2/K2b xác định khi nào lùi.
 - Phương án thay thế cho slot ICML: ý tưởng R1 (red-teaming như lấy mẫu "loài chưa thấy") có điểm ngang, nhưng chưa qua phản
   biện giả lập — xem `ideation/07_SELECTION.md`.
 - Mọi review là cùng họ model (provisional).
 
 ## Việc cần làm ngay (theo thứ tự)
 
-1. **Xác nhận máy chạy emulator:** Linux x86 có KVM (hoặc Mac arm64). Emulator không cần GPU. Môi trường cloud dùng để lập hồ sơ này **không** chạy được emulator.
+1. **Kiểm tra máy tính chạy emulator:** có hỗ trợ ảo hoá cho emulator (Linux: tồn tại `/dev/kvm`; Mac arm64 chạy AVD arm64 gốc). Emulator không cần GPU.
 2. **Pilot (a), không cần agent:** ~15 template AndroidWorld; viết ≥ 2 lộ trình UIAutomator đúng mỗi template; học mask trên một lộ trình, đo báo động giả trên lộ trình còn lại (K1).
-3. **Đăng ký trước C2** — và **viết phân tích power** (đây là điểm còn mở duy nhất trong bảng atom): toán tử gieo lỗi đóng băng, danh sách họ checker, margin, cỡ ô tối thiểu, agent giữ lại.
-4. **Pilot (b):** một agent rẻ trên ~30 template; đếm lỗi thật theo từng loại (K2).
-5. **Review khác họ model:** chạy `ideation/XMODEL_NOVELTY_P2_PROMPT.md` và `ideation/XMODEL_REDTEAM_P2_PROMPT.md` trên GPT/Gemini.
-6. Quyết định venue (ICML hay step-down) sau pilot (b).
+3. **Dựng AppWorld** (không cần emulator) và tái lập kết quả mutant đã công bố của arXiv:2610.09142; xác nhận ở commit được ghim rằng AppWorld có kèm lời giải tham chiếu.
+4. **Đăng ký trước C2** — và **viết phân tích power** (điểm còn mở trong bảng atom): toán tử gieo lỗi đóng băng, danh sách họ checker, margin, cỡ ô tối thiểu, agent giữ lại.
+5. **Pilot (b) ở cả hai họ:** một agent rẻ trên ~30 template AndroidWorld và một tập con AppWorld; đếm lỗi thật theo từng loại (K2).
+6. **Kiểm tra khả thi nhánh máy thật:** AndroidWorld lấy quyền root bằng `adb root`, thứ mà bản build thương mại root bằng Magisk thường không có → phải đọc trạng thái qua `su -c`. Dùng máy đã factory-reset, không tài khoản cá nhân, không SIM.
+7. **Review khác họ model:** chạy `ideation/XMODEL_NOVELTY_P2_PROMPT.md` và `ideation/XMODEL_REDTEAM_P2_PROMPT.md` trên GPT/Gemini — nhánh AppWorld và nhánh máy thật **chưa** qua phản biện nào.
 
 ## Venue
 
