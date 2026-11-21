@@ -56,6 +56,10 @@
 | D52 | Đính chính: con số Mem0 66,8% chỉ đúng khi tên đứng đầu câu (giữa/cuối câu 92,2% / 92,9%; lượt chạy thật 30/33 tên không đứng đầu câu) → chênh lệch 5–8 điểm, dưới ngưỡng C1; hạ nửa Mem0 của C1 xuống thành quan sát; đặc tả bản 2.3 | `round2/checks/c1b_ablation_RESULT.md` | Coordinator (lỗi thiết kế kiểm tra của coordinator: một mẫu câu, tên luôn đứng đầu) |
 | D53 | Sửa bảng định vị trong đặc tả: dòng PR #1850 còn ghi "làm tăng gộp nhầm" (đã rút ở D44); thêm các công trình và issue phải trích | Như trên | Coordinator |
 | D54 | Không tự chạy bước 2 (framework thứ ba + hệ quả ở câu trả lời): điều kiện "khung mới qua được" không đạt; chờ tác giả | Kế hoạch đã thống nhất với tác giả | Coordinator |
+| D55 | Chạy thí nghiệm quyết định về hệ quả ở câu trả lời (S7) | Lời tác giả 2026-11-21: "cần chạy thí nghiệm" | Tác giả |
+| D56 | Bài workshop PALM (NeurIPS 2026) đã đọc toàn văn từ PDF tác giả gửi: không có phân tích ở mức tên/thực thể/người, không có tiếng Việt; kết luận incremental của hai hunter giữ nguyên; thêm yêu cầu đối chứng bỏ qua bộ nhớ | `round2/05_NOVELTY/READING_PALM_NeurIPS2026_full_text.md` | Coordinator (theo bằng chứng) |
+| D57 | S7: "gộp nhầm làm sai câu trả lời" KHÔNG ĐẠT ở cả ba model hợp lệ (0/10, 1/10, 0/10; đối chứng 0/10) → rút phần "hỏi về A trả về dữ kiện của B" khỏi claim C5; đặc tả bản 2.4 | `round2/checks/s7_answer_consequence_PLAN.md`, `_RESULT.md` | Coordinator (theo quy tắc viết trước) |
+| D58 | Quan sát "mất dữ kiện của người thứ hai" (haiku 9/10, gpt-4o-mini 2/10, gpt-5.4-mini 0/10) chỉ ghi là mô tả; không chạy lại, không mở thử nghiệm mới khi chưa có ý kiến tác giả | Như trên; bài học D52 và các lần rút lại trước | Coordinator |
 
 ## Sai lệch so với quy trình chuẩn (ghi để minh bạch)
 - **Review khác họ model đã có (GPT-6, 2026-11-20)** cho novelty và phản biện của cả hai proposal; các bản đặc tả gửi đi đã lược mục 13 và các câu dự đoán để reviewer tự đánh giá. Các sửa đổi sau review (D18, D19) **chưa** được review lại.
