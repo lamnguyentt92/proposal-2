@@ -67,6 +67,9 @@
 | D63 | Loại D1 (anticipated/incremental), BC (incremental, sát anticipated), A1 (incremental, sát anticipated) theo hai hunter mỗi ý | `round3/05_NOVELTY/` | Coordinator (theo bằng chứng) |
 | D64 | E1 dẫn đầu vòng 3: hai hunter đều "novel (lõi)" — lần đầu trong 23 báo cáo của dự án; phản biện: referee ACL nghiêng về Findings (0,42), devil's advocate dự đoán thí nghiệm quyết định âm (~0,65), lập luận khác họ bác tiêu chí | `round3/05_NOVELTY/IDEA_E1_priorart_*.md`, `round3/06_REDTEAM/` | Coordinator (theo bằng chứng) |
 | D65 | Không chạy phép thử một ngày của E1: đầu ra của coordinator khi soạn bộ dữ liệu bị bộ lọc an toàn dừng; không soạn lại phần đó; chờ tác giả quyết định | `round3/07_SELECTION_R3.md` mục 4 | Coordinator |
+| D66 | Đi tiếp với E1 (đích ACL); phần coordinator không dựng được (bộ dữ liệu tấn công) giao cho tác giả kèm hướng dẫn | Lời tác giả 2026-11-21: "OK đi tiếp E1, phần bạn ko làm được thì hướng dẫn cho tôi làm" | Tác giả |
+| D67 | Gói E1 đã dựng: tiền đăng ký đã sửa 13 lỗi thiết kế (`round3/checks/e1_gate_eval_PLAN.md`), bộ chạy trung lập đọc dữ liệu tác giả soạn (`e1_gate_eval.py`, `e1_score.py`, `gates/`), hướng dẫn tiếng Việt (`round3/E1_RUN_GUIDE_vi.md`). Thí nghiệm quyết định (cổng frontier `obvious_fix` trên F3–F5 với nhãn người) chạy trước | Hai phản biện ở `round3/06_REDTEAM/` | Coordinator |
+| D68 | Coordinator không tự sinh bộ dữ liệu tấn công của E1 (các lượt xác nhận gài để lấy "yes" ngoài ý người dùng); giao cho tác giả soạn vì (a) cần người bản ngữ + nhãn người, (b) tránh tạo bộ công cụ lừa xác nhận dùng lại được | Phân công đúng về khoa học và an toàn | Coordinator |
 
 ## Sai lệch so với quy trình chuẩn (ghi để minh bạch)
 - **Review khác họ model đã có (GPT-6, 2026-11-20)** cho novelty và phản biện của cả hai proposal; các bản đặc tả gửi đi đã lược mục 13 và các câu dự đoán để reviewer tự đánh giá. Các sửa đổi sau review (D18, D19) **chưa** được review lại.
